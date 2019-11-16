@@ -33,7 +33,13 @@
                 }
                 else var x ="Não é raiz válida.";
                 return x;
-            }            
+            }  
+            var linkElement = document.createElement('a');
+            linkElement.setAttribute('href','index.html');
+            var textElement = document.createTextNode("Link");
+            linkElement.appendChild(textElement);
+            document.getElementById('result').appendChild(linkElement);
+
         </script>
     </body>
 
