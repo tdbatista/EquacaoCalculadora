@@ -1,0 +1,40 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Calculador de equação do segundo grau</h1>
+        <h2>ax²+bx+c=0</h2>
+        <div>
+            Digite o valor das constantes da equação.<br>
+            Obs: colocando 0 no a, a equação se torna de primeiro grau!<br>
+        </div>
+        <div id="equacao">
+            Valor de a: <input name="a" type="number" id="a"><br>
+            Valor de b: <input name="b" type="number" id="b"><br>
+            Valor de c: <input name="c" type="number" id="c"><br>
+            <button  id="calcula" onclick="calcular()">Calcular!</button>
+        </div>
+        <div id="result"></div>
+        <script>
+            function calcular(){ //função main da página
+                var a = document.getElementById('a');
+                var b = document.getElementById('b');
+                var c = document.getElementById('c');
+                document.getElementById('result').innerHTML=equacao(a.value,b.value,c.value);                
+                return;
+            }
+            function equacao(a=0,b=0,c=0){ //calculo da equação do segundo grau
+                var delta =b*b-4*a*c;
+                console.log(a,b,c,delta);
+                if (a==0)
+                    var x = (c*-1)/b;
+                else
+                if (delta>=0){
+                    var x = [(Math.sqrt(delta)-b)/(2*a), (0-Math.sqrt(delta)-b)/(2*a)];
+                }
+                else var x ="Não é raiz válida.";
+                return x;
+            }            
+        </script>
+    </body>
+
+</html>
